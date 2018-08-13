@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Activity</title>
+</head>
+<body>
+	<h3><a href="logout">Logout</a> || <a href="/home">Home</a></h3>
+	<h1>Dojo Activity Center</h1>
+	<p>--------------------------------------------------------------</p>
+		
+		<h2>{{activity_info.title}}</h2>
+		<h3>Event Coordinator: {{activity_info.coordinator.firstname}} {{activity_info.coordinator.lastname}}</h3>
+		<h3>Description:</h3>
+		<p>{{activity_info.description}}</p>
+		<h3>Participants:</h3>
+		{% for p in activity_info.participant.all %}
+			<p>{{p.firstname}} {{p.lastname}}</p>
+		{% endfor %}
+</body>
+</html>
