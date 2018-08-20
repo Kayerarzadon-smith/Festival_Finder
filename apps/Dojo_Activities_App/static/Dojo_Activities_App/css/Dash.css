@@ -1,0 +1,57 @@
+html, body {
+    width: auto;
+    height: auto;
+    bottom: 0;
+    top: 0;
+    margin: 0; 
+}
+
+.container {
+    height: 100%;
+    position: relative;
+}
+
+/* NAVIGATION BAR */
+.navBar{
+    width:100%;
+    height: 65px;
+    position: fixed;
+    background-color: grey;
+}
+
+.navItem{
+    float: right;
+    display: flex;
+    box-sizing: border-box;  
+    color: white;
+    margin-right: 30px;
+}
+
+.dashTable {
+    Width: 99%;
+    margin-top: 45px;
+    border: 2px;
+    background-color: whitesmoke;
+    padding: 10px; 
+    border-radius: 10px;
+}
+
+table{
+    margin: auto;
+}
+
+p {
+    color:white;
+    font-size: 21px;
+    display: inline-block;
+}
+b {
+    margin-left: 20px;
+}
+button{ 
+    float: right;
+}
+
+.event{
+    text-decoration: none;
+}
