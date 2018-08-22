@@ -49,14 +49,14 @@ def dashboard (request):
 		'me': me
 
 	}
-	return render(request,'dashboard.html', context)	
+	return render(request,'Dash.html', context)	
 
 def logout(request):
 	request.session.flush()
 	return redirect('/')
 
-def ActivityAdderPage(request):
-	return render(request, 'ActivityAdderPage.html')	
+def FestivalAdderPage(request):
+	return render(request, 'FestivalAdderPage.html')	
 
 '''def CreateActivityProcessor(request):
 	#results = Activity.objects.registration_validator(request.POST)	

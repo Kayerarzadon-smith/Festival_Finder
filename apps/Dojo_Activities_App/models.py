@@ -60,7 +60,7 @@ class UserManager(models.Manager):
 		errors = []
 		hashedpw = bcrypt.hashpw((postData['password'].encode()), bcrypt.gensalt(5))
 
-		user = User.objects.filter(alias = postData['alias'])
+		user = User.objects.filter(email = postData['email'])
 
 		if len(user) > 0:
 			# Check this user's password

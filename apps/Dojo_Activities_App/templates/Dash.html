@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+	{% load static %}
+	<!-- The line above tells Django to be ready to listen for static files -->
+	<link rel="stylesheet" href="{% static 'Dojo_Activities_App/css/Dash.css' %}" media="screen" title=""  charset="utf-8">
+</head>
+<body>
+	<div class="container">
+		<div class="navBar">
+            <p><b>Festival Friend</b></p>
+            <div class="dropdown">
+                <p class="dropname">{{request.session.firstname}}</p>
+                <div class="dropdown-content">
+                    <a href="home">Dashboard</a>
+                    <a href="logout">Logout</a>
+                </div>
+        </div>
+	</div><br>
+		<div class="dashTable">
+            <div class="table">
+		<table>
+			<th>Date and Time</th>
+			<th>Activity</th>
+			<th>Event Coordinator</th>
+			<th>Participants</th>
+			<th>Actions</th>
+			{% for A in all_activities %}
+			<tr>
+				<td>{{A.startdatetime}}</td>
+				<td><a class="event" href="activity/{{A.id}}">{{A.title}}</a></td>
+				<td>{{A.coordinator.firstname}} {{A.coordinator.lastname}} </td>
+				<td>{{A.participant.count}} </td>
+				{% if request.session.user_id == A.coordinator.id %}
+				<td><a href="delete/{{A.id}}">Delete</a></td>
+				{% elif me in A.participant.all %}
+				<td><a href="leave/{{A.id}}">Leave</a></td>
+				{% else %}
+				<td><a href="join/{{A.id}}">Join</a></td>
+				{% endif %}
+					{% empty %}
+						<p>There are currently no festivals going on!</p>
+            {% endfor %}
+        </table>
+        <a href="New"><button>Add New Festival!</button></a>
+    </div>
+    </div>
+	</div>
+</body>
+</html>

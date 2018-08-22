@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New Activity</title>
+	{% load static %}
+	<!-- The line above tells Django to be ready to listen for static files -->
+	<link rel="stylesheet" href="{% static 'Dojo_Activities_App/css/FestivalAdderPage.css' %}" media="screen" title=""  charset="utf-8">
+</head>
+<body>
+	<div class="container">
+		<div class="navBar">
+			<p><b>Festival Friend</b></p>
+			<div class="dropdown">
+				<p class="dropname">{{request.session.firstname}}</p>
+				<div class="dropdown-content">
+					<a href="home">Dashboard</a>
+					<a href="logout">Logout</a> 
+				</div>
+			</div>
+		</div>
+		<div class="backdrop">
+			<div class="festbox">
+		<form action="create" method="POST">
+			{% csrf_token %}
+			<label>Title: </label><input type="text" name="title"><br>
+			<label>Location: </label><input type="text" name="locations"><br>
+			<label>Starts: </label><input type="datetime-local" name="startdatetime"><br>
+			<label>Ends: </label><input type="datetime-local" name="enddatetime"><br>
+			<label>Event Details & Lineup: </label><br>
+			<input type="text" name="description"><br>
+			<input type="submit" value="Create Festival">
+		</form>
+	</div>
+	</div>
+	</div>
+</body>
+</html>

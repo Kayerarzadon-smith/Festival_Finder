@@ -2,18 +2,25 @@
 <html>
 <head>
 	<title>Login/Registration</title>
+	{% load static %}
+	<!-- The line above tells Django to be ready to listen for static files -->
+	<link rel="stylesheet" href="{% static 'Dojo_Activities_App/css/landing.css' %}" media="screen" title=""  charset="utf-8">
 </head>
 <body>
-	<h1>Welcome!</h1>
+	<div class="container">
+		<div class="navBar">
+			<p><b>Festival Friend</b></p>
+		</div>
+		<div class="backdrop">
         {% if messages %}
         <ul class="messages">
             {% for message in messages %}
                 <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
             {% endfor %}
         </ul>
-    	{% endif %}		
-	<fieldset>
-		<legend>Register</legend>
+		{% endif %}	
+		<div class="regbox">
+		<h2>Register</h2>	
 		<form action="register" method="POST">
 			{% csrf_token %}
 				<input placeholder="Enter First Name" type="text" name="firstname"><br>
@@ -21,21 +28,22 @@
 				<input placeholder="Enter Alias" type="text" name="alias"><br>
 				<input placeholder="Enter Email" type="email" name="email"><br>
 				<input placeholder="Enter Password" type="password" name="password"><br>
-				* Password should be at least 8 characters <br>
+				<h5>* Password should be at least 8 characters</h5> <br>
 				<input placeholder="Confirm Password" type="password" name="confirmpw"><br>
 				<input type="submit" value="Register">
 		</form>
-	</fieldset>	
+	</div>
 	<br>
-	<br>
-	<fieldset>
-		<legend>Login</legend>
+	<div class="loginbox">
+		<h2>Login</h2>
 		<form action="login" method="POST">
 			{% csrf_token %}
-			<input placeholder="Enter Alias" type="text" name="alias"><br>
+			<input placeholder="Enter email" type="text" name="email"><br>
 			<input placeholder="Enter Password" type="password" name='password'><br>
 			<input type="submit" value="Login">
 		</form>
-	</fieldset>
+	</div>
+	</div>
+	</div>
 </body>
 </html>
