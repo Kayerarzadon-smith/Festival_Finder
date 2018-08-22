@@ -1,0 +1,49 @@
+html, body {
+    width: auto;
+    height: auto;
+    bottom: 0;
+    top: 0;
+    margin: 0; 
+}
+
+.container {
+    height: 100%;
+    position: relative;
+}
+
+/* NAVIGATION BAR */
+.navBar{
+    width:100%;
+    height: 65px;
+    position: fixed;
+    background-color: green;
+}
+
+.navItem{
+    float: right;
+    margin: 10px;
+    display: flex;
+    box-sizing: border-box;  
+    color: white;
+}
+
+.dashTable {
+    Width: 1000px;
+    margin: auto;
+    border: 2px;
+    background-color: whitesmoke;
+    padding: 10px; 
+    border-radius: 10px;
+}
+
+h2{
+    color: blue;
+}
+
+h1 {
+    padding: 150px;
+}
+
+.event{
+    text-decoration: none;
+}

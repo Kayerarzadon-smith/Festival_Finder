@@ -20,13 +20,6 @@ html, body {
     background-color: white;
 }
 
-/* .navItem{
-    float: right;
-    display: flex;
-    box-sizing: border-box;  
-    color: purple;
-    margin-right: 30px;
-} */
 
 .dashTable {
     Width: 99%;
@@ -45,7 +38,6 @@ html, body {
 
 table{
     width:900px;
-    margin: auto;
 }
 
 p {
@@ -115,3 +107,5 @@ button:hover {
 
 
 .dropdown:hover .dropdown-content {display: block;}
+
+
